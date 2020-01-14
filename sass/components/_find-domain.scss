@@ -1,0 +1,106 @@
+.find-domain {
+  background-color: $find-domain-bg-color;
+  padding: 11rem 2rem 7rem;
+  position: relative;
+  transform: translateY(-44%);
+
+  @include outer-block-parameters;
+
+  @include for-size(phone-only) {
+    padding: 8rem 2rem 4rem;
+    top: 60%;
+  }
+
+  &__search-box {
+    display: flex;
+    justify-content: space-between;
+    max-width: 85rem;
+    margin: 0 auto 3.5rem;
+
+    @include outer-block-parameters;
+
+    @include for-size(phone-only) {
+      margin: 0 auto 2.8rem;
+    }
+  }
+
+  &__input,
+  &__button {
+    outline: none;
+  }
+
+  &__input {
+    width: 100%;
+    color: $find-domain-input-text-color;
+    font-size: 1.4rem;
+    padding: 2.7rem 0 2.7rem 3.2rem;
+    border: none;
+
+    @include placeholder {
+      color: $find-domain-input-text-color;
+    }
+
+    @include transition(all .3s ease);
+
+    @include for-size(phone-only) {
+      font-size: .8rem;
+      padding: 1.7rem 0 1.7rem 1.2rem;
+    }
+
+    &:focus {
+      @include outer-block-parameters;
+    }
+  }
+
+  &__button {
+    width: 34%;
+    background-color: $find-domain-button-bg-color;
+    color: $find-domain-button-text-color;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($find-domain-button-bg-color, 10%);
+    }
+
+    @include transition(all .3s ease);
+
+    @include for-size(phone-only) {
+      font-size: 1rem;
+    }
+  }
+
+  &__prices {
+    max-width: 84.8rem;
+    margin: 0 auto;
+  }
+
+  &__price {
+    margin-right: 2rem;
+
+    @include domain-price-color($domain-com-color,
+      $domain-asia-color,
+      $domain-online-color,
+      $domain-me-color,
+      $domain-cn-color);
+
+    &:nth-child(5) {
+      margin-right: 6rem;
+
+      @include for-size(phone-only) {
+        display: block;
+      }
+    }
+  }
+
+  &__info {
+    color: $find-domain-info-text-color;
+
+    @include for-size(phone-only) {
+      display: inline-block;
+      margin-top: 1.4rem;
+    }
+  }
+}

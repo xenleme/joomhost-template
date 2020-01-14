@@ -1,0 +1,105 @@
+// Add styles to input placeholder
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+// Transition
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Add different colors to domain prices
+@mixin domain-price-color($com, $asia, $online, $me, $cn) {
+  &:nth-child(1) {
+    color: $com;
+  }
+
+  &:nth-child(2) {
+    color: $asia;
+  }
+
+  &:nth-child(3) {
+    color: $online;
+  }
+
+  &:nth-child(4) {
+    color: $me;
+  }
+
+  &:nth-child(5) {
+    color: $cn;
+  }
+}
+
+// Add outer box shadow to blocks
+@mixin outer-block-parameters {
+  box-shadow: $main-box-shadow;
+  border-radius: 3px;
+}
+
+// Positioning
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Centering
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Add highlight a particular part in a text
+@mixin highlight($color) {
+  color: $color;
+}
+
+// Responsive
+@mixin for-size($size) {
+  @if $size==phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  }
+
+  @else if $size==tablet-portrait-up {
+    @media (max-width: 790px) {
+      @content;
+    }
+  }
+
+  @else if $size==tablet-landscape-up {
+    @media (max-width: 995px) {
+      @content;
+    }
+  }
+}

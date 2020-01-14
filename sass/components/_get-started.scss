@@ -1,0 +1,76 @@
+.get-started {
+  background-color: $get-started-bg-color;
+  padding: 13.3rem 0 10rem;
+
+  &__offers {
+    background-image: url(../img/bg-images/get-started-bg.svg);
+    background-repeat: no-repeat;
+    background-position: right 0 bottom 30%;
+    font-family: 'Roboto',
+      sans-serif;
+    color: $get-started-offers-text-color;
+    margin-top: 8rem;
+    padding-top: 5rem;
+
+    @include transition(all .4s ease);
+
+    @include for-size(tablet-landscape-up) {
+      background-image: none;
+      margin-top: 5rem;
+    }
+  }
+
+  &__todays-offer {
+    max-width: 61.3rem;
+  }
+
+  &__heading,
+  &__descr {
+    margin-bottom: 4.3rem;
+
+    @include for-size(tablet-landscape-up) {
+      margin-bottom: 3.6rem;
+    }
+  }
+
+  &__features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 55rem;
+    min-height: 13rem;
+
+    @include for-size(phone-only) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__features-list-item {
+    font-size: 2rem;
+    width: 27.2rem;
+
+    &::before {
+      content: url(../img/icons/check-round.svg);
+      display: inline-block;
+      margin-right: .6rem;
+      vertical-align: middle;
+    }
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__price {
+    font-size: 3.4rem;
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 2.6rem;
+    }
+
+    @include for-size(phone-only) {
+      font-size: 2rem;
+    }
+  }
+}

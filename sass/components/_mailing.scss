@@ -1,0 +1,51 @@
+.mailing {
+  color: $mailing-text-color;
+
+  &__text {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__input-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 1.2rem;
+    color: $mailing-input-text-color;
+    padding: 1.4rem 0 1.4rem 2rem;
+    outline: none;
+
+    @include placeholder {
+      font-size: 1.2rem;
+      color: $mailing-input-text-color;
+    }
+  }
+
+  &__button {
+    background-color: $mailing-button-bg-color;
+    width: 5rem;
+    height: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($mailing-button-bg-color, 7%);
+    }
+
+    @include position(absolute, $right: 0);
+
+    @include transition(all .3s ease);
+  }
+
+  &__button-icon {
+    filter: brightness(3);
+  }
+}

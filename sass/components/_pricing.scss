@@ -1,0 +1,175 @@
+.pricing {
+  padding: 13rem 0 18rem;
+
+  @include for-size(tablet-landscape-up) {
+    padding: 10rem 0 13rem;
+  }
+
+  &__header {
+    max-width: 88rem;
+    color: $pricing-content-text-color;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    color: $section-title-color;
+    margin-bottom: 3.2rem;
+  }
+
+  &__header-descr {
+    max-width: 58.4rem;
+    margin: 0 auto 12.4rem;
+
+    @include for-size(tablet-landscape-up) {
+      margin: 0 auto 9.4rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    color: $pricing-content-text-color;
+
+    @include for-size(tablet-landscape-up) {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    position: relative;
+    max-width: 100%;
+    font-family: 'Roboto',
+      sans-serif;
+    padding: 0 5rem 0 5rem;
+    margin-right: 1.2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include outer-block-parameters;
+
+    @include for-size(tablet-landscape-up) {
+      padding: 0 2rem;
+      margin-bottom: 5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__price {
+    display: block;
+    min-height: 9.5rem;
+    background-image: url(../img/bg-images/ellipse.svg);
+    background-repeat: no-repeat;
+    background-position: right 47% bottom 6px;
+    color: $pricing-price-text-color;
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 5rem;
+
+    @include for-size(tablet-landscape-up) {
+      margin-bottom: 4rem;
+    }
+
+    @include for-size(phone-only) {
+      background-image: none;
+      background-color: #267ae9;
+      min-height: 0;
+      padding: 1rem 0;
+    }
+  }
+
+  &__small {
+    font-size: 1.6rem;
+
+    &--currency {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 auto 3rem;
+  }
+
+  &__title {
+    color: $pricing-title-color;
+    font-size: 3.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 4.1rem;
+      text-align: center;
+    }
+
+    @include for-size(phone-only) {
+      font-size: 3.3rem;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 4rem;
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 2rem;
+    }
+
+    @include for-size(phone-only) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__feature-list {
+    margin-bottom: 13.5rem;
+
+    @include for-size(tablet-landscape-up) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include for-size(phone-only) {
+      flex-direction: column;
+      margin-bottom: 10rem;
+    }
+  }
+
+  &__feature-list-item {
+    font-size: 1.6rem;
+    line-height: 1.8;
+
+    &::before {
+      content: url(../img/icons/checkmark-icon.svg);
+      display: inline-block;
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $pricing-button-bg-color;
+    color: $pricing-price-text-color;
+    font-size: 1.72rem;
+    font-weight: bold;
+    padding: 2.3rem 0;
+    border: none;
+    border-radius: 0 0 3px 3px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($pricing-button-bg-color, 10%);
+    }
+
+    @include transition(all .3s ease);
+  }
+}

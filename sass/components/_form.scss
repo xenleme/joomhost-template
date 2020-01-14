@@ -1,0 +1,36 @@
+.form {
+  &__input {
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    font-size: 1.1rem;
+    color: $form-text-color;
+    border: $form-border;
+    padding: 1.4rem 0 1.4rem 1.1rem;
+
+    &:nth-child(4) {
+      resize: none;
+      margin-bottom: 1.1rem;
+    }
+
+    @include placeholder {
+      color: $form-text-color;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__button {
+    background-color: $form-button-bg-color;
+    color: $form-button-text-color;
+    font-size: 1.3rem;
+    padding: .9rem 1.4rem;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($form-button-bg-color, 7%);
+    }
+
+    @include transition(all .3s ease);
+  }
+}

@@ -1,0 +1,125 @@
+.header {
+  font-family: 'Lato',
+    sans-serif;
+}
+
+.header-top {
+  background-color: $top-header-bg-color;
+  font-size: 1.4rem;
+  padding: 1.5rem 0;
+
+  &__contacts,
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    width: 50rem;
+
+    @include for-size(tablet-landscape-up) {
+      width: 42rem;
+    }
+
+    @include for-size(tablet-portrait-up) {
+      margin-bottom: 1.7rem;
+    }
+  }
+
+  &__links {
+    width: 23.5rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: $top-header-text-color;
+    padding: .3rem .4rem;
+
+    &:hover,
+    &:active {
+      opacity: .67;
+    }
+
+    @include transition(all .3s ease-in-out);
+  }
+
+  &__link:hover &__icon {
+    display: inline-block;
+    transform: scale(1.2);
+  }
+
+  &__icon {
+    vertical-align: middle;
+    margin-right: .37rem;
+    opacity: 9;
+
+    &--language {
+      vertical-align: baseline;
+    }
+
+    @include transition(all .2s ease-in-out);
+
+    @include for-size(tablet-portrait-up) {
+      display: none;
+    }
+  }
+
+  @include for-size(tablet-landscape-up) {
+    font-size: 1.2rem;
+  }
+
+  @include for-size(phone-only) {
+    font-size: 1.1rem;
+  }
+}
+
+.header-main {
+  padding: 2.4rem 0 1rem 0;
+
+  &__logo {
+    @include for-size(tablet-landscape-up) {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto 1rem;
+    }
+  }
+
+  &__burger-menu {
+    display: none;
+    margin-top: .4rem;
+    cursor: pointer;
+
+    @include for-size(tablet-portrait-up) {
+      display: inline-block;
+    }
+  }
+
+  &__menu {
+    width: 69rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.5;
+
+    @include for-size(tablet-landscape-up) {
+      font-size: 1.2rem;
+      margin: 0 auto;
+    }
+
+    @include for-size(tablet-portrait-up) {
+      display: none;
+    }
+  }
+
+  &__menu-link {
+    color: $header-menu-text-color;
+
+    &:hover {
+      opacity: .4;
+    }
+
+    @include transition(all .3s ease);
+  }
+}

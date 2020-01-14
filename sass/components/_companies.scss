@@ -1,0 +1,25 @@
+.companies {
+  background-color: $companies-bg-color;
+  padding: 11rem 0;
+  text-align: center;
+
+  @include for-size(tablet-landscape-up) {
+    padding: 7rem 0;
+  }
+
+  &__logo {
+    margin-right: 4rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include for-size(phone-only) {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

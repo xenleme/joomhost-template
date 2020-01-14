@@ -1,0 +1,17 @@
+.testimonails {
+  background-color: $testimonails-bg-color;
+  padding: 11rem 0 10rem;
+
+  @include for-size(tablet-landscape-up) {
+    padding: 11rem 2rem 10rem;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 12.5rem;
+
+    @include for-size(phone-only) {
+      margin-bottom: 5rem;
+    }
+  }
+}

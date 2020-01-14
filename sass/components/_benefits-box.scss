@@ -1,0 +1,60 @@
+.benefits-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: $benefits-box-bg-color;
+  padding: 6rem 0 5.5rem;
+
+  @include outer-block-parameters;
+
+  @include for-size(phone-only) {
+    flex-direction: column;
+    padding: 3rem 0;
+  }
+
+  &__item {
+    position: relative;
+    width: 38.3%;
+    text-align: center;
+
+    &::after {
+      content: "";
+      width: 2px;
+      height: 77%;
+      border-right: 1px dashed #e1e0e0;
+
+      @include position(absolute, $top: 0, $right: 0);
+
+      @include for-size(phone-only) {
+        border-right: none;
+      }
+    }
+
+    &:last-child::after {
+      border-right: none;
+    }
+
+    @include for-size(phone-only) {
+      width: 90%;
+      margin: 0 auto 5rem;
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 3rem;
+
+    @include for-size(phone-only) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: 'Roboto',
+      sans-serif;
+    color: $benefits-box-title-color;
+    font-size: 2rem;
+  }
+}
