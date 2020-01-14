@@ -1,0 +1,1 @@
+# joomhost-template
